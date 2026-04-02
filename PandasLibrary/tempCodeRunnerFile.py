@@ -1,1 +1,2 @@
-"C:\\Users\\madha\\Desktop\\PandasLibrary\\Students.csv"
+var.dropna(inplace=True)
+# print(var)
