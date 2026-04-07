@@ -15,8 +15,26 @@ print(var1.join(var2))
 # changing the index
 var1 = pd.DataFrame({"A":[1,2,3,4], "B":[11,12,13,14]},index=['a','b','c','d'])
 
-var2= pd.DataFrame({"C":[10,20],"D":[21,22]})
+var2= pd.DataFrame({"C":[10,20],"D":[21,22]},index=['a','b'])
 
 print(var1.join(var2))
+
+# Performing join operations
+
+print(var1.join(var2,how="inner"))
+
+print(var1.join(var2,how="left"))
+
+print(var1.join(var2,how="right"))
+
+print(var1.join(var2,how="outer"))
+
+#sometimes both DataFrames have same column names This creates a conflict...To solve this, we use: lsuffix & rsuffix 
+var1 = pd.DataFrame({"A":[1,2,3,4], "B":[11,12,13,14]},index=['a','b','c','d'])
+
+var2= pd.DataFrame({"B":[10,20],"D":[21,22]},index=['a','b'])
+
+print(var1.join(var2,how="outer",lsuffix="-1",rsuffix='-2'))
+
 
 
