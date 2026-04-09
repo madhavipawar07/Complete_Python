@@ -19,4 +19,10 @@ print(pd.melt(var,id_vars=["days"],var_name="python"))
 
 var = pd.DataFrame({"days":[1,2,3,4,5,6],"st_name":['a','b','c','a','b','c',],"eng":[11,12,15,19,10,18],"maths":[17,18,13,19,15,14]})
 
+print(var)
+
+# At least two arguements passing is must otherwise it will throw error
 print(var.pivot(index="days",columns="st_name"))
+
+# Get particular column data only
+print(var.pivot(index="days",columns="st_name",values="eng"))
