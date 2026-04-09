@@ -26,3 +26,16 @@ print(var.pivot(index="days",columns="st_name"))
 
 # Get particular column data only
 print(var.pivot(index="days",columns="st_name",values="eng"))
+
+# Performing aggregate functions
+#  pivot() does not support aggfunc. It only works when data has unique combinations. We have to use pivot_table() instead
+
+var = pd.DataFrame({"days":[1,1,1,1,2,2],"st_name":['a','b','c','a','b','c',],"eng":[11,12,15,19,10,18],"maths":[17,18,13,19,15,14]})
+
+print(var.pivot_table(index="st_name",columns="days",aggfunc="mean"))
+
+print(var.pivot_table(index="st_name",columns="days",aggfunc="sum"))
+
+#margins=True is used to add overall summary totals (row-wise and column-wise) in a pivot table
+print(var.pivot_table(index="st_name",columns="days",aggfunc="mean",margins=True))
+
