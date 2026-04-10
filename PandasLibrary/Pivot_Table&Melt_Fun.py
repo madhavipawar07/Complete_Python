@@ -39,4 +39,4 @@ print(var.pivot_table(index="st_name",columns="days",aggfunc="sum"))
 #margins=True is used to add overall summary totals (row-wise and column-wise) in a pivot table
 print(var.pivot_table(index="st_name",columns="days",aggfunc="mean",margins=True))
 
-print(var.pivot_table(index="st_name",columns="days",aggfunc="mean"))
+
